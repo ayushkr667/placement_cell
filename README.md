@@ -1,6 +1,6 @@
-To Run the project in your desktop
+# To Run the project in your desktop
 
-1. download or clone the project 
+1. * download or clone the project 
 2. go to the project folder 
 3. start your virtual environment. If you hav not installed "install pipenv"
 4. To start virtual Environment Run command "pipenv shell" 
