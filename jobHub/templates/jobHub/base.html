@@ -1,0 +1,221 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JobHub</title>
+
+    <!-- bootstap cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <!-- font awesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+      crossorigin="anonymous"
+    />
+
+    <!-- animated about us cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!-- google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- css style files -->
+    <link rel="stylesheet" href="{% static 'jobHub/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'jobHub/css/base.css' %}" />
+    <link rel="stylesheet" href="{% static 'jobHub/css/animate.css' %}" />
+    <link rel="stylesheet" href="{% static 'jobHub/css/home.css' %}" />
+    <link rel="stylesheet" href="{% static 'jobHub/css/forms.css' %}" />
+    <link rel="stylesheet" href="{% static 'jobHub/css/dashboard.css' %}" />
+    <link rel="stylesheet" href="{% static 'jobHub/css/applicants.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'jobHub/css/contact-about-us.css' %}"
+    />
+  </head>
+  <body>
+    <!-- navbar starts here -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <div class="bounce">
+          <a class="navbar-brand ms-3" href="\">
+            <i class="fab fa-hubspot fa-lg"></i> JOBHUB</a
+          >
+        </div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto"></ul>
+          <ul class="navbar-nav me-5 mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="/about"
+                ><i class="far fa-gem"></i> About Us</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact">
+                <i class="fas fa-headset"></i> Contact Us</a
+              >
+            </li>
+            {% if request.user.is_authenticated %}
+            <li class="nav-item dropdown me-3">
+              <a
+                class="nav-link dropdown-toggle active"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="fas fa-user"></i>
+                {{user.first_name}} {{user.last_name}}
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" href="/dashboard"
+                    ><i class="fas fa-tachometer-alt fa-lg"></i> DASHBOARD</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/add_vacancy"
+                    ><i class="far fa-plus-square fa-lg"></i> POST A NEW JOB</a
+                  >
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="/signout"
+                    ><i class="fas fa-sign-out-alt fa-lg"></i> LOGOUT</a
+                  >
+                </li>
+              </ul>
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="/signup"
+                ><i class="fas fa-user-plus"></i> REGISTER</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/signin">
+                <i class="fas fa-sign-in-alt"></i> LOGIN</a
+              >
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- navbar ends here -->
+
+    {% block content %} {% endblock %}
+
+    <!-- footer starts here -->
+    <hr style="height: 5px; background-color: #261501" />
+    <footer class="new_footer_area">
+      <div class="new_footer_top">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4 col-md-6 pb-2">
+              <div
+                class="f_widget about-widget pl_70 wow fadeInLeft"
+                data-wow-delay="0.4s"
+                style="
+                  visibility: visible;
+                  animation-delay: 0.4s;
+                  animation-name: fadeInLeft;
+                "
+              >
+                <h3 class="f-title f_600 t_color f_size_18">QUICK LINKS</h3>
+                <ul class="list-unstyled f_list">
+                  <li><a href="/">Company</a></li>
+                  <li><a href="/about">About Us</a></li>
+                  <li><a href="/contact">Contact Us</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 pb-2">
+              <div
+                class="f_widget about-widget pl_70 wow fadeInLeft"
+                data-wow-delay="0.6s"
+                style="
+                  visibility: visible;
+                  animation-delay: 0.6s;
+                  animation-name: fadeInLeft;
+                "
+              >
+                <h3 class="f-title f_600 t_color f_size_18">HELP</h3>
+                <ul class="list-unstyled f_list">
+                  <li><a href="#">Term &amp; conditions</a></li>
+                  <li><a href="#">Support Policy</a></li>
+                  <li><a href="#">Privacy</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 pb-2">
+              <div
+                class="f_widget social-widget pl_70 wow fadeInLeft"
+                data-wow-delay="0.8s"
+                style="
+                  visibility: visible;
+                  animation-delay: 0.8s;
+                  animation-name: fadeInLeft;
+                "
+              >
+                <h3 class="f-title f_600 t_color f_size_18">TEAM SOLUTIONS</h3>
+                <div class="f_social_icon">
+                  <a href="#" class="fab fa-facebook"></a>
+                  <a href="#" class="fab fa-twitter"></a>
+                  <a href="#" class="fab fa-linkedin"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer_bg">
+          <div class="footer_bg_one"></div>
+          <div class="footer_bg_two"></div>
+        </div>
+      </div>
+      <div class="footer_bottom">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-12 col-sm-12">
+              <p class="mb-0 f_400">© jobHub Inc.. 2021 All rights reserved.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- footer ends here -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

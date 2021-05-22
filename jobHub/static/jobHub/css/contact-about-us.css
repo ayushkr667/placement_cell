@@ -1,0 +1,87 @@
+/* contact us style starts */
+.contact-us-form {
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 60px;
+  margin: 12px auto;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-us-form > div {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  padding: 0 20px;
+  transform: translate(-50%, -50%);
+  background-color: #261501;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.contact-us-form > div > img {
+  filter: invert(1);
+  width: 100px;
+}
+
+.contact-us-form > input,
+.contact-us-form > textarea {
+  padding: 12px;
+  margin: 12px auto;
+  border: 1px solid #ccc;
+  color: #261501;
+  border-radius: 5px;
+  display: block;
+  width: 45vw;
+}
+
+.contact-us-form > textarea {
+  height: 100px;
+  resize: none;
+}
+
+.contact-us-form > input[type="submit"] {
+  margin-top: 3%;
+  max-width: 20vw;
+  min-height: 50px;
+  padding-left: 1%;
+  padding-right: 1%;
+  cursor: pointer;
+  transition: 0.35s;
+}
+
+.contact-us-form > input[type="submit"] {
+  color: #ddd;
+}
+
+.contact-us-form > input[type="submit"]:hover {
+  color: whitesmoke;
+  background-color: #555;
+}
+
+/* contact us style ends */
+/*  */
+/*  */
+/*  */
+/* about-us style starts */
+.team .col-lg-3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.team h2 {
+  color: #41250b;
+}
+
+.teamp p {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.btn-col {
+  color: whitesmoke;
+}
+/* about-us style ends */

@@ -1,0 +1,57 @@
+{%extends 'jobHub/base.html' %} {% block content %}
+
+<div id="signup-box">
+  <div class="left">
+    <h1 class="signup-heading">Sign up</h1>
+    <form method="POST" action="/signup/">
+      {% csrf_token %} {{ form.username }}
+      <!-- <input type="text" name="username" placeholder="Username"/> -->
+      {{ form.first_name }}
+      <!-- <input type="text" name="firstname" placeholder="FirstName"/> -->
+      {{ form.last_name }}
+      <!-- <input type="text" name="lastname" placeholder="LastName"/> -->
+      {{ form.email }}
+      <!-- <input type="text" name="email" placeholder="E-mail" /> -->
+      {{ form.password1 }}
+      <!-- <input type="password" name="password" placeholder="Password" /> -->
+      {{ form.password2 }}
+      <!-- <input type="password" name="password2" placeholder="Retype password" /> -->
+      <input type="submit" name="signup_submit" value="Sign me up" />
+    </form>
+  </div>
+  <div class="right">
+    <span class="loginwith">Sign in with<br />social network</span>
+
+    <button class="social-signin facebook">Log in with facebook</button>
+    <button class="social-signin google">Log in with Google+</button>
+    <ul>
+      <h5>NOTE:</h5>
+      <li>Your password must contain at least 8 characters</li>
+      <li>Your password can't be entirely numeric</li>
+    </ul>
+  </div>
+  <div class="or">OR</div>
+</div>
+
+<!-- <div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 mx-auto">
+        <div class="alert alert-success"><h2>Create Account</h2></div>
+        <div class="p-3">
+          <form method="POST" action="/signup/">
+            {% csrf_token %} {{ form.as_ul }}
+            <hr />
+            <input
+              class="btn btn-success create_acc_btn"
+              type="submit"
+              value="Create Account"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+{% endblock %}

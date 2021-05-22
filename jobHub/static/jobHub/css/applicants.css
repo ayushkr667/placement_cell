@@ -1,0 +1,17 @@
+.applicants-header{
+    text-align: center;
+    padding-top: 10px;
+    height: 50px;
+    margin-top: 3%;
+    background-color: #41250b;
+    color: whitesmoke;
+}
+
+.applicant-box{
+    border-radius: 10px;
+    background-color: #f2e6d0;
+    padding: 3%;
+    border-color: white;
+    border-width: 2px;
+    box-shadow:10px 10px 10px #41250b;
+}

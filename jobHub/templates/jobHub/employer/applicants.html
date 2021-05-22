@@ -1,0 +1,62 @@
+{% extends 'jobHub/base.html' %} {% block content %} {% load static %}
+<div class="container-fluid">
+  {% if applicants|length == 0 %}
+  <div class="card created-jobbox">
+    <div class="row">
+      <div class="col-md-12 pt-3">
+        <div class="alert alert-info text-center">
+          <p class="display-4">NO APPLICANT APPLIED</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% else %}
+  <div class="applicants-header">
+    <h3>
+      {{ applicants|length }}<span style="margin-left: 12px"
+        >Applicants have APPLIED</span
+      >
+    </h3>
+  </div>
+  <div class="row">
+    {% for applicant in applicants %}
+    <div class="col-md-3 mt-3">
+      <div class="card applicant-box">
+        {% if forloop.counter|divisibleby:2 %}
+        <img
+          class="mx-5 mt-3 mb-2"
+          style="border-radius: 50%"
+          alt="Bootstrap Image Preview"
+          src="{% static 'jobHub/images/applicant-men-avatar.png' %}"
+        />
+        {% else %}
+        <img
+          class="mx-5 mt-3 mb-2"
+          style="border-radius: 50%"
+          alt="Bootstrap Image Preview"
+          src="{% static 'jobHub/images/applicant-women-avatar.png' %}"
+        />
+        {% endif %}
+
+        <ul class="list-group" style="list-style: none">
+          <li class="list-group-item">NAME : {{ applicant.Full_name }}</li>
+          <li class="list-group-item">PHONE NO. : {{ applicant.phone_no }}</li>
+          <li class="list-group-item">EMAIL : {{ applicant.user.email }}</li>
+          <li class="list-group-item">
+            RESUME : <a href="{{applicant.resume_link}}">Click</a>
+          </li>
+          <li class="list-group-item">
+            APPLIED ON : {{ applicant.applied_on|date }}
+          </li>
+          <li class="mt-2">
+            <a href="#" class="btn btn-success btn-lg">ACCEPT</a>
+            <a href="reject/{{applicant.id}}/{{applicant.job.id}}" class="btn btn-danger btn-lg">REJECT</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

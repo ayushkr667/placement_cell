@@ -1,0 +1,60 @@
+.created-jobbox {
+  background-color: #f2e6d0;
+  margin-top: 2%;
+  margin-left: 1%;
+  margin-right: 1%;
+  padding: 1%;
+  border-color: white;
+  border-width: 2px;
+  box-shadow: 10px 10px 10px #41250b;
+}
+
+.created-job-title {
+  margin-top: 2%;
+  margin-left: 1%;
+  margin-right: 1%;
+  height: 50px;
+  background-color: #41250b;
+  text-align: center;
+  padding-top: 10px;
+  color: whitesmoke;
+}
+
+@media screen and (min-width: 800px) {
+  .applicant-btn {
+    width: 150px;
+    height: 60px;
+    background-color: rgb(0, 174, 255);
+    color: whitesmoke;
+    text-align: center;
+    margin-top: 3.5rem;
+    padding-top: 8%;
+  }
+
+  .delete-btn {
+    width: 150px;
+    height: 60px;
+    background-color: rgb(216, 5, 5);
+    color: whitesmoke;
+    text-align: center;
+    margin-top: 3.5rem;
+    padding-top: 8%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .applicant-btn {
+    margin-top: 15px;
+    background-color: rgb(0, 174, 255);
+    color: whitesmoke;
+    text-align: center;
+  }
+
+  .delete-btn {
+    background-color: rgb(216, 5, 5);
+    color: whitesmoke;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}

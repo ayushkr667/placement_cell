@@ -1,0 +1,87 @@
+{% extends 'jobHub/base.html' %} {% block content %} {% load static %}
+
+<div class="container-fluid">
+  <div class="row mt-4">
+    <div class="col-md-7">
+      <img
+        alt="Bootstrap Image Preview"
+        src="{% static 'jobHub/images/home.svg'%}"
+      />
+    </div>
+    <div
+      class="col-md-5 job"
+      style="
+        box-shadow: 10px 10px 10px #41250b;
+        border-width: 2px;
+        border-color: whitesmoke;
+      "
+    >
+      <p>
+        The Placement Cell plays a crucial role in locating job opportunities
+        for Under Graduates and Post Graduates passing out from the college by
+        keeping in touch with reputed firms and industrial establishments.
+        <br />
+        <br />The Placement Cell operates round the year to facilitate contacts
+        between companies and graduates. The number of students placed through
+        the campus interviews is continuously rising.
+      </p>
+    </div>
+  </div>
+  <div class="row mt-5 mb-5">
+    <div class="col-md-12 mb-3 applyjob"><h1>Apply for the jobs</h1></div>
+    {% for jobs in all_Jobs %}
+    <div class="col-md-4 mb-5" style="background-color: #bf9056">
+      <div
+        class="card job_box"
+        style="
+          box-shadow: 15px 15px 15px #41250b;
+          border-width: 2px;
+          border-color: whitesmoke;
+        "
+      >
+        <img
+          class="card-img-top"
+          src="{% static 'jobHub/images/jobs.jpg' %}"
+          alt="Card image cap"
+        />
+        <div class="card-body">
+          <h3 class="card-title">{{ jobs.company_Name }}</h3>
+          <hr />
+          <p class="card-text">{{jobs.description}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <span>JOB TITLE</span> : {{ jobs.title }}
+          </li>
+          <li class="list-group-item">
+            <span>LOCATION</span> : {{jobs.location}}
+          </li>
+          {% if jobs.jobType == '1' %}
+          <li class="list-group-item"><span>JOBTYPE</span> : Full Time</li>
+          {% elif jobs.jobType == '2' %}
+          <li class="list-group-item"><span>JOBTYPE</span> : Part Time</li>
+          {% else %}
+          <li class="list-group-item"><span>JOBTYPE</span> : Internship</li>
+          {% endif %}
+          <li class="list-group-item">
+            <span>SALARY</span> : {{ jobs.salary }}
+          </li>
+          <li class="list-group-item">
+            <span> Date</span> : {{ jobs.last_date|date }}
+          </li>
+        </ul>
+        <div class="card-body">
+          <a
+            href="/apply_job/{{jobs.id}}"
+            class="btn btn-info active btn-lg"
+            type="submit"
+            title="Apply now"
+            >Apply</a
+          >
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

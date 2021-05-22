@@ -1,0 +1,58 @@
+{% extends 'jobHub/base.html' %} {% block content %}
+
+<div class="container-fluid">
+  <div class="created-job-title">
+    <h3>CREATED JOBS</h3>
+  </div>
+  {% if createdJobs|length == 0 %}
+  <div class="card created-jobbox">
+    <div class="row">
+      <div class="col-md-12 pt-3">
+        <div class="alert alert-info text-center">
+          <p class="display-4">YOU HAVE NOT CREATED ANY JOB</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %} {% for jobs in createdJobs %}
+  <div class="card created-jobbox">
+    <div class="row">
+      <div class="col-md-8">
+        <h3>{{ jobs.title }}</h3>
+        <p>{{jobs.description}}</p>
+        <ul class="list-group">
+          <li class="list-group-item">LOCATION : {{ jobs.location }}</li>
+          <li class="list-group-item">SALARY : {{ jobs.salary }}</li>
+          <li class="list-group-item">
+            CREATED ON : {{ jobs.created_on|date }} |
+            <!--  -->
+            LAST DATE : {{ jobs.last_date|date }}
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <a
+          href="/dashboard/applicants/{{jobs.id}}"
+          type="submit"
+          class="btn btn-info applicant-btn btn-lg"
+          title="All Applicants"
+        >
+          Applicants
+        </a>
+      </div>
+      <div class="col-md-2">
+        <a
+          href="delete_job/{{jobs.id}}"
+          type="submit"
+          class="btn btn-danger delete-btn btn-lg"
+          title="Delete Job"
+        >
+          Delete Job
+        </a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+body {
+  /* background-color: rgb(143, 125, 103); */
+  
+  background-color: #bf9056;
+  font-family: "Noto Serif", serif;
+}
+
+.alert {
+  text-align: center;
+  color: rgb(50, 2, 2);
+}
+
+.errorlist {
+  color: rgb(63, 3, 3);
+}
+
+.bg-dark {
+  background-color: #261501 !important;
+}
+
+.navbar-brand {
+  color: whitesmoke;
+}
+
+.helptext {
+  opacity: 0;
+}

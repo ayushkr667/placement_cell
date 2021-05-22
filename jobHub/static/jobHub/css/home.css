@@ -1,0 +1,45 @@
+.job {
+  padding-top: 2%;
+  padding-right: 5%;
+  border: 2px solid whitesmoke;
+  color: #261501;
+  background: #f2e6d0;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  text-align: left;
+  padding-left: 2%;
+  box-shadow: 10px 10px 10px #41250b;
+}
+
+.row {
+  text-align: center;
+  margin-right: 2%;
+  margin-left: 2%;
+}
+
+.job_box {
+  border-width: 1.5px;
+  border-radius: 1.2rem;
+  border-color: whitesmoke;
+  padding: 5%;
+  background-color: #f2daac;
+  margin-left: 2px;
+  box-shadow: 10px 10px 10px #41250b;
+}
+
+.applyjob {
+  background-color: #41270b;
+  color: whitesmoke;
+}
+
+.card-img-top {
+  border-radius: 1.2rem;
+}
+
+.list-group-item {
+  background-color: #f2daac;
+}
+
+.list-group-item {
+  background-color: #f3e6cd;
+}

@@ -1,0 +1,51 @@
+{%extends 'jobHub/base.html' %} {% block content %}
+
+<div id="login-box">
+  <div class="left">
+    <h1 class="signup-heading">Sign in</h1>
+
+    <form method="POST" action="/signin/">
+      {% csrf_token %}
+      <!-- <input type="text" name="{{form.username.name}}" placeholder="Username" /> -->
+      {{ form.username.label }} {{ form.username }}
+      <!-- <input type="password" name="{{form.password.name}}" placeholder="Password" /> -->
+      {{ form.password.label }}{{ form.password }}
+
+      <input type="submit" name="signup_submit" value="Sign in" />
+    </form>
+  </div>
+  <div class="right">
+    <span class="loginwith">Sign in with<br />social network</span>
+
+    <button class="social-signin facebook">Log in with facebook</button>
+    <button class="social-signin google">Log in with Google+</button>
+    <!-- error message -->
+    {% if form.non_field_errors %}
+    <ul class="form-errors">
+      {% for error in form.non_field_errors %}
+      <li>{{ error }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    <!-- error message ends -->
+  </div>
+  <div class="or">OR</div>
+</div>
+
+<!-- <div>
+  <div class="container">
+    <div class="row" id="wrapper">
+      <div class="col-lg-5 mx-auto" id="signin_form">
+        <div class="alert alert-info"><h2>Login</h2></div>
+        <div class="p-5">
+          <form action="/signin/" method="POST">
+            {% csrf_token %} {{ form.as_p }}
+            <hr />
+            <input type="submit" value="Login" class="btn btn-info login_btn" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+{% endblock %}
